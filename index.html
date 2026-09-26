@@ -2,24 +2,50 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Мой полноценный сайт</title>
-    <!-- Подключаем наш файл со стилями -->
+    <title>One Page Сайт</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Наше меню навигации -->
+    <!-- Меню навигации с якорями (#) -->
     <nav>
-        <a href="index.html">Главная</a>
-        <a href="about.html">О нас</a>
-        <a href="contacts.html">Контакты</a>
+        <a href="#home">Главная</a>
+        <a href="#about">О нас</a>
+        <a href="#services">Услуги</a>
+        <a href="#contacts">Контакты</a>
     </nav>
 
-    <!-- Основной блок с текстом -->
-    <div class="container">
-        <h1>Добро пожаловать на Главную страницу!</h1>
-        <p>Это пример полноценного сайта с меню навигации, красивым фоном и структурой.</p>
-    </div>
+    <!-- Секция 1: Главная -->
+    <section id="home" class="slide">
+        <div class="container">
+            <h1>Добро пожаловать!</h1>
+            <p>Это главная секция нашего одностраничного сайта.</p>
+        </div>
+    </section>
+
+    <!-- Секция 2: О нас -->
+    <section id="about" class="slide">
+        <div class="container">
+            <h1>О нас</h1>
+            <p>Мы создаем потрясающие статические сайты прямо на GitHub!</p>
+        </div>
+    </section>
+
+    <!-- Секция 3: Услуги -->
+    <section id="services" class="slide">
+        <div class="container">
+            <h1>Наши услуги</h1>
+            <p>Веб-дизайн, разработка, верстка и бесплатный хостинг.</p>
+        </div>
+    </section>
+
+    <!-- Секция 4: Контакты -->
+    <section id="contacts" class="slide">
+        <div class="container">
+            <h1>Контакты</h1>
+            <p>Напишите нам, и мы ответим вам в кратчайшие сроки.</p>
+        </div>
+    </section>
 
 </body>
 </html>
