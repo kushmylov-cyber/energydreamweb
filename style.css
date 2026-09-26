@@ -1,18 +1,25 @@
-/* Настройки всего сайта и фона */
+/* Включаем плавную прокрутку для всего сайта */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #74ebd5, #9ecefa); /* Красивый градиентный фон */
     color: #333;
-    min-height: 100vh;
 }
 
-/* Меню навигации */
+/* Фиксированное меню сверху, чтобы оно не уезжало при прокрутке */
 nav {
-    background-color: #333;
-    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.95);
+    padding: 15px 0;
     text-align: center;
+    z-index: 1000; /* Меню всегда поверх остальных блоков */
 }
 nav a {
     color: white;
@@ -20,17 +27,44 @@ nav a {
     margin: 0 15px;
     font-size: 18px;
     font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 nav a:hover {
-    color: #74ebd5; /* Цвет ссылки при наведении */
+    color: #74ebd5;
+    transform: scale(1.1);
 }
 
-/* Основной контент */
+/* Каждая секция занимает 100% высоты экрана (Viewport Height) */
+.slide {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 60px; /* Отступ сверху, чтобы меню не перекрывало текст */
+}
+
+/* Разные фоны для эффекта смены слайдов */
+#home { background: linear-gradient(135deg, #74ebd5, #9ecefa); }
+#about { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+#services { background: linear-gradient(135deg, #ff9a9e, #fecfef); }
+#contacts { background: linear-gradient(135deg, #f12711, #f5af19); color: white; }
+
+/* Красивая карточка для текста */
 .container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.9); /* Белая полупрозрачная плашка */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px); /* Модный эффект размытия заднего плана */
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Если в блоке белый текст (для темных слайдов) */
+#about .container, #contacts .container {
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
 }
